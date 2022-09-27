@@ -2,7 +2,7 @@
   "intents": [
     {
       "tag": "greeting",
-      "buzzwords": ["hi", "hallo", "guten tag", "moin"],
+      "buzzwords": ["hi", "hallo", "guten", "tag", "moin"],
       "responses": [
         "Hallo. Wie kann ich dir helfen?",
         "Hi!",
@@ -13,6 +13,13 @@
       "tag": "close",
       "buzzwords": ["bye", "ciao", "tschüss", "quit", "exit", "stopp"],
       "responses": ["Auf Wiedersehen", "Ich hoffe ich konnte dir helfen!"]
+    },
+    {
+      "tag": "help",
+      "buzzwords": ["help", "hilfe"],
+      "responses": [
+        "Ich kann dir bei den folgenden Themen helfen:\n-Personenbezogene Daten\n-Und so weiter"
+      ]
     }
   ]
 }
