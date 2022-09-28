@@ -61,7 +61,40 @@
       "question": {
         "type": "string",
         "variable": "problem_os"
+      },
+      "redirect": "name"
+    },
+    {
+      "tag": "name",
+      "buzzwords": ["name", "nennen", "nenn"],
+      "responses": ["Wie soll ich dich nennen?", "Wie heißt du?"],
+      "question": {
+        "type": "string",
+        "variable": "user_name"
       }
+    },
+    {
+      "tag": "human",
+      "buzzwords": [
+        "human",
+        "mensch",
+        "menschen",
+        "support",
+        "echt",
+        "roboter"
+      ],
+      "responses": [
+        "Sie können sich beim Support melden unter +49 123 45 67",
+        "Bitte melden Sie sich bei unserem Telefonsupport unter +49 123 45 67"
+      ]
+    },
+    {
+      "tag": "pii",
+      "buzzwords": ["pii", "personenbezogen", "daten", "dsgvo"],
+      "responses": [
+        "Zu den Personenbezogenen Daten (PII) gehören alle Daten, die zur Identifizierung von Individuen gehören. Unter anderem: der Name, Sozialversicherungsnummern, ",
+        "Bitte melden Sie sich bei unserem Telefonsupport unter +49 123 45 67"
+      ]
     }
   ]
 }
