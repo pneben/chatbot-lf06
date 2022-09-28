@@ -93,14 +93,27 @@
       "buzzwords": ["pii", "personenbezogen", "daten", "dsgvo"],
       "responses": [
         "Zu den Personenbezogenen Daten (PII) gehören alle Daten, die zur Identifizierung von Individuen gehören. Unter anderem: der Name, Sozialversicherungsnummern, ",
-        "Bitte melden Sie sich bei unserem Telefonsupport unter +49 123 45 67"
+        "Bitte melden Sie sich bei unserem Telefonsupport unter +49 123 45 67", "Zum Beispiel: Name, Vorname, Anschrift, Kfz-Kennzeichen, eiegntlich alles was dich als Person betrifft!"
       ]
     },
+
     {
       "tag": "Q&A",
-      "buzzwords":["DSGVO", "was ist dsgvo?"],
-      "responses":["Alle Informationen, die sich auf eine identifierbare Person beziehen.", 
-        "Die DSGVO dient der Vereinheitlichung des Datenschutzrechts. Erklärtes Ziel ist der Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten und zugleich die Gewährleistung des freien Verkehrs solcher Daten (Art. 1 Abs. 1 DSGVO)."]
+      "buzzwords": ["Grundsätze"],
+      "responses": ["Speicherbegrenzung, Richtigkeit der Daten, Datenminimierung, Integrität und vertraulichkeit, Zweckbindung, Transparenz und Rechtmäßigkeit"]
+    },
+
+    {
+      "tag": "Q&A2",
+      "buzzwords":["löschen", "delete", "entfernen" ],
+      "responses":["Ja!, falls die daten nicht mehr benötigt werden, müssen die Daten gelöscht werden"]
+    },
+
+    {
+      "tag": "Q&A3",
+      "buzzwords":["datenschutzbeauftragter", "beauftragter", "zuständig"],
+      "responses":["Ansprechperson für datenschutzrelevante Fragen (Rechtliche Fragen), Schulung/Sensibilisierung von Personal, Anlauftelle für betroffene Personen"]
+
     }
       ]
 }
