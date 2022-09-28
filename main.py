@@ -31,7 +31,6 @@ def start():
 def read_input():
     print(bcolors.OKGREEN)
     input_tmp = input("Du: ")
-    print(bcolors.ENDC)
     return input_tmp
 
 # Liest den Input zu einer Frage, und speichert es in "data"
@@ -45,7 +44,9 @@ def print_result(intent: Intent):
     print(bcolors.OKBLUE)
     if intent:
         if intent.Tag == "close":
-            return print(data)
+            print(bcolors.ENDC)
+            print(data)
+            return exit()
 
         print("Bot: " + random.choice(intent.Responses))
         if intent.Question and intent.Question.Variable:
@@ -54,7 +55,6 @@ def print_result(intent: Intent):
             print_result(get_intent(intent.Redirect))
     else:
         print("Bot: Wir konnten nichts zu ihrer Anfrage finden. Bitte wenden Sie sich an den Support unter +49 123 45 67")
-    return print(bcolors.ENDC)
 
 # Gibt ein Intent zurück, abhängig vom tag
 def get_intent(tag: str):

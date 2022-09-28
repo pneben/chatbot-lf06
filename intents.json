@@ -66,12 +66,13 @@
     },
     {
       "tag": "name",
-      "buzzwords": ["name", "nennen", "nenn"],
+      "buzzwords": [],
       "responses": ["Wie soll ich dich nennen?", "Wie heißt du?"],
       "question": {
         "type": "string",
         "variable": "user_name"
-      }
+      },
+      "redirect": "saved"
     },
     {
       "tag": "human",
@@ -93,8 +94,17 @@
       "buzzwords": ["pii", "personenbezogen", "daten", "dsgvo"],
       "responses": [
         "Zu den Personenbezogenen Daten (PII) gehören alle Daten, die zur Identifizierung von Individuen gehören. Unter anderem: der Name, Sozialversicherungsnummern, ",
-        "Bitte melden Sie sich bei unserem Telefonsupport unter +49 123 45 67"
+        ""
       ]
+    },
+    {
+      "tag": "saved",
+      "buzzwords": [],
+      "responses": [
+        "Wir haben ihre Daten aufgenommen. Es wurde ein Ticket an den Support erstellt.",
+        "Ihre Daten wurden aufgenommen. Es wurde ein Ticket an unseren Support erstellt."
+      ],
+      "redirect": "close"
     }
   ]
 }
