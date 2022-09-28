@@ -1,34 +1,100 @@
-{"intents": [
-
-{"tag": "Greetings",
-"buzzwords": ["hello", "hi", "huhu", "hey", "moin", "hallo", "help", "hilfe", ".", "guten tag"],
-
-"responses": ["Hello!", "Hallo!", "How can I help you?", "Wie kann ich Ihnen helfen?"]
-},
-
-{ "tag": "Close",
-"buzzwords": [ "See you", "bye", "thank you", "thx", "dankeschoen", "danke", "vielen dank", "cya", "ciao", "tschuess", "tschueß"],
-
-"responses": ["Goodbye!", "Sad tp see you! :(", "See ya!", "Have a nice day!", "Schoenen Tag noch!", "Yallah bye!"]
-},
-
-{ "tag": "Name",
-"buzzwords": ["Whats your name?", "who are you?", "Wer bist du?", "Wie heißt du?"],
-
-"responses": ["My name is Bond, James Bond!", "Hi, my name is James.", "Ich bin James!", "Oglum, ich bin James, naber?"]
-
-},
-
-{"tag": "Theme",
-"buzzwords": ["I need your help", "can you help me?"],
-
-"responses": ["What is the issue?", "How can I help you?", "What can I do for you?"]
-},
-
-{"tag": "Q&A",
-"buzzwords":["DSGVO", "was ist dsgvo?"],
-
-"responses":["Alle Informationen, die sich auf eine identifierbare Person beziehen.", 
-"Die DSGVO dient der Vereinheitlichung des Datenschutzrechts. Erklärtes Ziel ist der Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten und zugleich die Gewährleistung des freien Verkehrs solcher Daten (Art. 1 Abs. 1 DSGVO)."]
-
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "buzzwords": ["hi", "hallo", "guten", "tag", "moin"],
+      "responses": [
+        "Hallo. Wie kann ich dir helfen?",
+        "Hi!",
+        "Guten Tag! Wie kann ich dir helfen?"
+      ]
+    },
+    {
+      "tag": "close",
+      "buzzwords": [
+        "bye",
+        "ciao",
+        "tschüss",
+        "quit",
+        "exit",
+        "stopp",
+        "fertig",
+        "ende"
+      ],
+      "responses": ["Auf Wiedersehen", "Ich hoffe ich konnte dir helfen!"]
+    },
+    {
+      "tag": "help",
+      "buzzwords": ["help", "hilfe"],
+      "responses": [
+        "Ich kann dir bei den folgenden Themen helfen:\n-Personenbezogene Daten\n-Und so weiter"
+      ]
+    },
+    {
+      "tag": "problem",
+      "buzzwords": ["problem", "kaputt"],
+      "responses": [
+        "Was ist das Problem?",
+        "Beschreiben Sie bitte das Problem.",
+        "Um was für ein Problem handelt es sich hierbei?"
+      ],
+      "question": {
+        "type": "string",
+        "variable": "problem_description"
+      },
+      "redirect": "os"
+    },
+    {
+      "tag": "os",
+      "buzzwords": [
+        "betriebssystem",
+        "os",
+        "operatingsystem",
+        "windows",
+        "mac",
+        "linux"
+      ],
+      "responses": [
+        "Welches Betriebssystem benutzen Sie?",
+        "Um welches Betriebssytem geht es?"
+      ],
+      "question": {
+        "type": "string",
+        "variable": "problem_os"
+      },
+      "redirect": "name"
+    },
+    {
+      "tag": "name",
+      "buzzwords": ["name", "nennen", "nenn"],
+      "responses": ["Wie soll ich dich nennen?", "Wie heißt du?"],
+      "question": {
+        "type": "string",
+        "variable": "user_name"
+      }
+    },
+    {
+      "tag": "human",
+      "buzzwords": [
+        "human",
+        "mensch",
+        "menschen",
+        "support",
+        "echt",
+        "roboter"
+      ],
+      "responses": [
+        "Sie können sich beim Support melden unter +49 123 45 67",
+        "Bitte melden Sie sich bei unserem Telefonsupport unter +49 123 45 67"
+      ]
+    },
+    {
+      "tag": "pii",
+      "buzzwords": ["pii", "personenbezogen", "daten", "dsgvo"],
+      "responses": [
+        "Zu den Personenbezogenen Daten (PII) gehören alle Daten, die zur Identifizierung von Individuen gehören. Unter anderem: der Name, Sozialversicherungsnummern, ",
+        "Bitte melden Sie sich bei unserem Telefonsupport unter +49 123 45 67"
+      ]
+    }
+  ]
 }

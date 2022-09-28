@@ -1,7 +1,7 @@
 import json
 import random
 import cdifflib
-from intent import Intent
+from intent import Intent, IntentQuestion
 
 MAX_MATCH_DELTA = 75
 class bcolors:
@@ -15,12 +15,17 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+# Nutzerdaten, bspw: OS, Problem
+data = {}
+
+intents = []
+
 # Eingangsmethode des Programms
 def start():
     running = True
     intents = load_intents()
     while running:
-        loop(intents)
+        loop()
 
 # Liest Eingabe des Nutzers
 def read_input():
@@ -29,17 +34,35 @@ def read_input():
     print(bcolors.ENDC)
     return input_tmp
 
+# Liest den Input zu einer Frage, und speichert es in "data"
+def ask_question(key: str):
+    answer = read_input()
+    data[key] = answer
+    return answer
+
 # Gibt die Antwort aus, aus der Sicht des Bots
 def print_result(intent: Intent):
     print(bcolors.OKBLUE)
     if intent:
+        if intent.Tag == "close":
+            return print(data)
+
         print("Bot: " + random.choice(intent.Responses))
+        if intent.Question and intent.Question.Variable:
+            ask_question(intent.Question.Variable)
+        if intent.Redirect:
+            print_result(get_intent(intent.Redirect))
     else:
-        print("Bot: Wir konnten nichts zu ihrer Anfrage finden. Bitte wenden Sie sich an den Support unter +49 0123-456-78")
+        print("Bot: Wir konnten nichts zu ihrer Anfrage finden. Bitte wenden Sie sich an den Support unter +49 123 45 67")
     return print(bcolors.ENDC)
 
+# Gibt ein Intent zurück, abhängig vom tag
+def get_intent(tag: str):
+    intent = [x for x in intents if x.Tag == tag][0]
+    return intent
+
 # Gibt den Intent zur jeweiligen Message zurück
-def find_intent(msg: str, intents: list[Intent]):
+def find_intent(msg: str):
     words = msg.lower().split(" ")
     found = None
     for intent in intents:
@@ -59,7 +82,7 @@ def calculate_diff(w1: str, w2: str):
 
 # Lädt die Antworten aus der intents.json
 def load_intents():
-    intents = []
+    intents_tmp = []
     with open('./intents.json', mode='r', encoding='utf-8') as f:
         intents_raw = json.load(f)
         for intent in intents_raw["intents"]:
@@ -67,15 +90,18 @@ def load_intents():
             obj.Tag = intent["tag"]
             obj.Responses = intent["responses"]
             obj.Buzzwords = intent["buzzwords"]
+            obj.Redirect = intent.get("redirect")
+            obj.Question = IntentQuestion()
+            obj.Question.Type = intent.get("question")["type"] if intent.get("question") else None
+            obj.Question.Variable = intent.get("question")["variable"] if intent.get("question") else None
             intents.append(obj)
     return intents
 
 # Hauptschleife zum lesen/ausgeben der Nachrichten
-def loop(intents):
+def loop():
     msg = read_input()
-    intent = find_intent(msg, intents)
+    intent = find_intent(msg)
     print_result(intent)
-
 
 if __name__ == "__main__":
     start()
