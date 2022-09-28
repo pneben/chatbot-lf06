@@ -53,7 +53,7 @@ def print_result(intent: Intent):
         if intent.Redirect:
             print_result(get_intent(intent.Redirect))
     else:
-        print("Bot: Wir konnten nichts zu ihrer Anfrage finden. Bitte wenden Sie sich an den Support unter +49 0123-456-78")
+        print("Bot: Wir konnten nichts zu ihrer Anfrage finden. Bitte wenden Sie sich an den Support unter +49 123 45 67")
     return print(bcolors.ENDC)
 
 # Gibt ein Intent zurück, abhängig vom tag
