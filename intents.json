@@ -95,6 +95,12 @@
         "Zu den Personenbezogenen Daten (PII) gehören alle Daten, die zur Identifizierung von Individuen gehören. Unter anderem: der Name, Sozialversicherungsnummern, ",
         "Bitte melden Sie sich bei unserem Telefonsupport unter +49 123 45 67"
       ]
+    },
+    {
+      "tag": "Q&A",
+      "buzzwords":["DSGVO", "was ist dsgvo?"],
+      "responses":["Alle Informationen, die sich auf eine identifierbare Person beziehen.", 
+        "Die DSGVO dient der Vereinheitlichung des Datenschutzrechts. Erklärtes Ziel ist der Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten und zugleich die Gewährleistung des freien Verkehrs solcher Daten (Art. 1 Abs. 1 DSGVO)."]
     }
-  ]
+      ]
 }
