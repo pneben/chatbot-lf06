@@ -11,7 +11,16 @@
     },
     {
       "tag": "close",
-      "buzzwords": ["bye", "ciao", "tschüss", "quit", "exit", "stopp"],
+      "buzzwords": [
+        "bye",
+        "ciao",
+        "tschüss",
+        "quit",
+        "exit",
+        "stopp",
+        "fertig",
+        "ende"
+      ],
       "responses": ["Auf Wiedersehen", "Ich hoffe ich konnte dir helfen!"]
     },
     {
@@ -20,6 +29,39 @@
       "responses": [
         "Ich kann dir bei den folgenden Themen helfen:\n-Personenbezogene Daten\n-Und so weiter"
       ]
+    },
+    {
+      "tag": "problem",
+      "buzzwords": ["problem", "kaputt"],
+      "responses": [
+        "Was ist das Problem?",
+        "Beschreiben Sie bitte das Problem.",
+        "Um was für ein Problem handelt es sich hierbei?"
+      ],
+      "question": {
+        "type": "string",
+        "variable": "problem_description"
+      },
+      "redirect": "os"
+    },
+    {
+      "tag": "os",
+      "buzzwords": [
+        "betriebssystem",
+        "os",
+        "operatingsystem",
+        "windows",
+        "mac",
+        "linux"
+      ],
+      "responses": [
+        "Welches Betriebssystem benutzen Sie?",
+        "Um welches Betriebssytem geht es?"
+      ],
+      "question": {
+        "type": "string",
+        "variable": "problem_os"
+      }
     }
   ]
 }
