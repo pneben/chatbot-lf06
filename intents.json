@@ -1,0 +1,38 @@
+{"intents": [
+
+{"tag": "Greetings",
+"buzzwords": ["hello", "hi", "huhu", "hey", "moin", "hallo", "help", "hilfe", ".", "guten tag"],
+
+"responses": ["Hello!", "Hallo!", "How can I help you?", "Wie kann ich Ihnen helfen?"]
+},
+
+{ "tag": "Close",
+"buzzwords": [ "See you", "bye", "thank you", "thx", "dankeschoen", "danke", "vielen dank", "cya", "ciao", "tschuess", "tschueß"],
+
+"responses": ["Goodbye!", "Sad tp see you! :(", "See ya!", "Have a nice day!", "Schoenen Tag noch!", "Yallah bye!"]
+},
+
+{ "tag": "Name",
+"buzzwords": ["Whats your name?", "who are you?", "Wer bist du?", "Wie heißt du?"],
+
+"responses": ["My name is Bond, James Bond!", "Hi, my name is James.", "Ich bin James!", "Oglum, ich bin James, naber?"]
+
+},
+
+{"tag": "Theme",
+"buzzwords": ["I need your help", "can you help me?"],
+
+"responses": ["What is the issue?", "How can I help you?", "What can I do for you?"]
+},
+
+{"tag": "Q&A",
+"buzzwords":["Welche Arten von Daten sind durch die DSGVO geschützt?", "Was sind personen Bezogene Daten?", "was ist dsgvo?",
+"Welche Grundsätze sind zu beachte?", "wann müssen die Daten gelöscht werden?", "Was sind die Aufgaben eines Datenschutzbeauftragten?", "Muss ich jetzt sowohl die DSGVO als auch das BDSG beachten?"],
+
+"responses":["Zum Beispiel: Name, Vorname, Anschrift, Kfz-Kennzeichen, eiegntlich alles was dich als Person betrifft!","Alle Informationen, die sich auf eine identifierbare Person beziehen.", 
+"Die DSGVO dient der Vereinheitlichung des Datenschutzrechts. Erklärtes Ziel ist der Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten und zugleich die Gewährleistung des freien Verkehrs solcher Daten (Art. 1 Abs. 1 DSGVO).",
+"Speicherbegrenzung, Richtigkeit der Daten, Datenminimierung, Integrität und vertraulichkeit, Zweckbindung, Transparenz und Rechtmäßigkeit", "Ja!, falls die daten nicht mehr benötigt werden, müssen die Daten gelöscht werden"]
+
+}
+]
+}
