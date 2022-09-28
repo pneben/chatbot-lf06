@@ -92,8 +92,31 @@
       "tag": "pii",
       "buzzwords": ["pii", "personenbezogen", "daten", "dsgvo"],
       "responses": [
-        "Zu den Personenbezogenen Daten (PII) gehören alle Daten, die zur Identifizierung von Individuen gehören. Unter anderem: der Name, Sozialversicherungsnummern, ",
-        "Bitte melden Sie sich bei unserem Telefonsupport unter +49 123 45 67"
+        "Zu den Personenbezogenen Daten (PII) gehören alle Daten, die zur Identifizierung von Individuen gehören. Zum Beispiel: Name, Vorname, Anschrift, Kfz-Kennzeichen, eiegntlich alles was dich als Person betrifft!"
+      ]
+    },
+
+    {
+      "tag": "Grundsaetze",
+      "buzzwords": ["Grundsätze"],
+      "responses": [
+        "Die Grundsätze der Verarbeitung von personenbezogenen Daten sind Speicherbegrenzung, Richtigkeit der Daten, Datenminimierung, Integrität und vertraulichkeit, Zweckbindung, Transparenz und Rechtmäßigkeit"
+      ]
+    },
+
+    {
+      "tag": "delete",
+      "buzzwords": ["löschen", "delete", "entfernen"],
+      "responses": [
+        "Falls die personenbezogenen Daten nicht mehr benötigt werden, müssen die Daten gelöscht werden"
+      ]
+    },
+
+    {
+      "tag": "datenschutzbeauftragter",
+      "buzzwords": ["datenschutzbeauftragter", "beauftragter", "zuständig"],
+      "responses": [
+        "Der Datenschutzbeauftragter ist die Ansprechperson für datenschutzrelevante Fragen (Rechtliche Fragen), Schulung/Sensibilisierung von Personal, Anlauftelle für betroffene Personen"
       ]
     }
   ]
