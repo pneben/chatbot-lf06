@@ -3,11 +3,7 @@
     {
       "tag": "greeting",
       "buzzwords": ["hi", "hallo", "guten", "tag", "moin"],
-      "responses": [
-        "Hallo. Wie kann ich dir helfen?",
-        "Hi!",
-        "Guten Tag! Wie kann ich dir helfen?"
-      ]
+      "responses": ["Hallo. Wie kann ich dir helfen?","Hi!","Guten Tag! Wie kann ich dir helfen?"]
     },
     
     {
@@ -27,9 +23,7 @@
     {
       "tag": "help",
       "buzzwords": ["help", "hilfe"],
-      "responses": [
-        "Ich kann dir bei den folgenden Themen helfen:\n-Personenbezogene Daten\n-Und so weiter"
-      ]
+      "responses": ["Ich kann dir bei den folgenden Themen helfen:\n-Personenbezogene Daten\n-Und so weiter"]
     },
     
     {
@@ -39,7 +33,8 @@
       "responses":["Zum Beispiel: Name, Vorname, Anschrift, Kfz-Kennzeichen, eiegntlich alles was dich als Person betrifft!","Alle Informationen, die sich auf eine identifierbare Person beziehen.", 
                     "Die DSGVO dient der Vereinheitlichung des Datenschutzrechts. Erklärtes Ziel ist der Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten und zugleich die Gewährleistung des freien Verkehrs solcher Daten (Art. 1 Abs. 1 DSGVO).",
                      "Speicherbegrenzung, Richtigkeit der Daten, Datenminimierung, Integrität und vertraulichkeit, Zweckbindung, Transparenz und Rechtmäßigkeit", "Ja!, falls die daten nicht mehr benötigt werden, müssen die Daten gelöscht werden"]
-
+    },
+      
     {
       "tag": "close",
       "buzzwords": ["bye", "ciao", "tschüss", "quit", "exit", "stopp"],
