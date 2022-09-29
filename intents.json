@@ -1,15 +1,6 @@
 {
   "intents": [
     {
-      "tag": "greeting",
-      "buzzwords": ["hi", "hallo", "guten", "tag", "moin"],
-      "responses": [
-        "Hallo. Wie kann ich dir helfen?",
-        "Hi!",
-        "Guten Tag! Wie kann ich dir helfen?"
-      ]
-    },
-    {
       "tag": "close",
       "buzzwords": [
         "bye",
@@ -124,6 +115,15 @@
       "buzzwords": ["software","programm","anwendung"],
       "responses": [
         "Hier finden Sie weitere Informationen über unsere Software: https://moodle.itech-bs14.de/mod/page/view.php?id=36135"
+      ]
+    },
+    {
+      "tag": "greeting",
+      "buzzwords": ["hi", "hallo", "guten", "tag", "moin"],
+      "responses": [
+        "Hallo. Wie kann ich dir helfen?",
+        "Hi!",
+        "Guten Tag! Wie kann ich dir helfen?"
       ]
     }
   ]
