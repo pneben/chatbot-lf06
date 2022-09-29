@@ -1,15 +1,6 @@
 {
   "intents": [
     {
-      "tag": "greeting",
-      "buzzwords": ["hi", "hallo", "guten", "tag", "moin"],
-      "responses": [
-        "Hallo. Wie kann ich dir helfen?",
-        "Hi!",
-        "Guten Tag! Wie kann ich dir helfen?"
-      ]
-    },
-    {
       "tag": "close",
       "buzzwords": [
         "bye",
@@ -32,7 +23,13 @@
     },
     {
       "tag": "problem",
-      "buzzwords": ["problem", "kaputt"],
+      "buzzwords": [
+        "problem",
+        "kaputt",
+        "komplikation",
+        "ticket",
+        "schwierigkeit"
+      ],
       "responses": [
         "Was ist das Problem?",
         "Beschreiben Sie bitte das Problem.",
@@ -66,12 +63,13 @@
     },
     {
       "tag": "name",
-      "buzzwords": ["name", "nennen", "nenn"],
+      "buzzwords": [],
       "responses": ["Wie soll ich dich nennen?", "Wie heißt du?"],
       "question": {
         "type": "string",
         "variable": "user_name"
-      }
+      },
+      "redirect": "saved"
     },
     {
       "tag": "human",
@@ -93,6 +91,36 @@
       "buzzwords": ["pii", "personenbezogen", "daten", "dsgvo"],
       "responses": [
         "Zu den Personenbezogenen Daten (PII) gehören alle Daten, die zur Identifizierung von Individuen gehören. Zum Beispiel: Name, Vorname, Anschrift, Kfz-Kennzeichen, eiegntlich alles was dich als Person betrifft!"
+      ]
+    },
+    {
+      "tag": "saved",
+      "buzzwords": [],
+      "responses": [
+        "Wir haben ihre Daten aufgenommen. Es wurde ein Ticket an den Support erstellt.",
+        "Ihre Daten wurden aufgenommen. Es wurde ein Ticket an unseren Support erstellt."
+      ],
+      "redirect": "close"
+    },
+    {
+      "tag": "legal",
+      "buzzwords": ["legal", "rechtlich", "recht", "ethisch", "ethical"],
+      "responses": [
+        "Wir respektieren die Daten unserer Kunden, wie deren Eigentum. Personenbezogene Daten werden mit größter nach DSGVO und BDSG behandelt."
+      ]
+    },
+    {
+      "tag": "illegal",
+      "buzzwords": ["illegal"],
+      "responses": [
+        "In vielen Ländern sind bestimmte Tätigkeiten illegal. Dazu gehören beispielsweise:\n - Änderungen an Software oder Hardware ohne die Zustimmung des Kunden\n - Zugriff auf Kundenaccounts, private Datein, oder E-Mails\n - Kopieren oder Teilen von Urheberrechtlich geschützten Medien (Bilder, Music, Software, ...)"
+      ]
+    },
+    {
+      "tag": "cyberlaw",
+      "buzzwords": ["cyberlaw", "internetrecht"],
+      "responses": [
+        "Das Internetrecht beschreibt das internationalen, regionalen und nationalen Internetrecht, welches"
       ]
     },
 
@@ -124,6 +152,15 @@
       "buzzwords": ["software","programm","anwendung"],
       "responses": [
         "Hier finden Sie weitere Informationen über unsere Software: https://moodle.itech-bs14.de/mod/page/view.php?id=36135"
+      ]
+    },
+    {
+      "tag": "greeting",
+      "buzzwords": ["hi", "hallo", "guten", "tag", "moin"],
+      "responses": [
+        "Hallo. Wie kann ich dir helfen?",
+        "Hi!",
+        "Guten Tag! Wie kann ich dir helfen?"
       ]
     }
   ]
