@@ -71,6 +71,7 @@ def find_intent(msg: str):
     words = msg.lower().split(" ")
     found = None
     for intent in intents:
+        if not found == None: break
         for word in words:
             for buzzword in intent.Buzzwords:
                 # Berechne den Unterschied zwischen der Nutzereingabe und Buzzwords
@@ -102,7 +103,7 @@ def load_intents():
             obj.Question.Type = intent.get("question")["type"] if intent.get("question") else None
             obj.Question.Variable = intent.get("question")["variable"] if intent.get("question") else None
             intents.append(obj)
-    return intents
+    return intents_tmp
 
 # Hauptschleife zum lesen/ausgeben der Nachrichten
 def loop():
