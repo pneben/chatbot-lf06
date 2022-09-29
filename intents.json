@@ -118,6 +118,13 @@
       "responses": [
         "Der Datenschutzbeauftragter ist die Ansprechperson für datenschutzrelevante Fragen (Rechtliche Fragen), Schulung/Sensibilisierung von Personal, Anlauftelle für betroffene Personen"
       ]
+    },
+    {
+      "tag": "Software",
+      "buzzwords": ["software","programm","anwendung"],
+      "responses": [
+        "Hier finden Sie weitere Informationen über unsere Software: https://moodle.itech-bs14.de/mod/page/view.php?id=36135"
+      ]
     }
   ]
 }
