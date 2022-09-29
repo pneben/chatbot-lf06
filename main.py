@@ -3,7 +3,9 @@ import random
 import cdifflib
 from intent import Intent, IntentQuestion
 
-MAX_MATCH_DELTA = 75
+# Minimale differenz zwischen Wörtern
+MIN_MATCH_DELTA = 85
+
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -31,7 +33,6 @@ def start():
 def read_input():
     print(bcolors.OKGREEN)
     input_tmp = input("Du: ")
-    print(bcolors.ENDC)
     return input_tmp
 
 # Liest den Input zu einer Frage, und speichert es in "data"
@@ -45,18 +46,22 @@ def print_result(intent: Intent):
     print(bcolors.OKBLUE)
     if intent:
         if intent.Tag == "close":
-            return print(data)
+            print(bcolors.ENDC)
+            print(data)
+            return exit()
 
         print("Bot: " + random.choice(intent.Responses))
+        
         if intent.Question and intent.Question.Variable:
+            # Falls eine Frage vorhanden ist, dann fragen
             ask_question(intent.Question.Variable)
         if intent.Redirect:
+            # Wenn ein redirect vorhanden ist, dann gebe den redirect-Intent aus
             print_result(get_intent(intent.Redirect))
     else:
         print("Bot: Wir konnten nichts zu ihrer Anfrage finden. Bitte wenden Sie sich an den Support unter +49 123 45 67")
-    return print(bcolors.ENDC)
 
-# Gibt ein Intent zurück, abhängig vom tag
+# Sucht ein Intent nach dem tag
 def get_intent(tag: str):
     intent = [x for x in intents if x.Tag == tag][0]
     return intent
@@ -68,8 +73,9 @@ def find_intent(msg: str):
     for intent in intents:
         for word in words:
             for buzzword in intent.Buzzwords:
+                # Berechne den Unterschied zwischen der Nutzereingabe und Buzzwords
                 diff = calculate_diff(word, buzzword)
-                if diff > MAX_MATCH_DELTA:
+                if diff > MIN_MATCH_DELTA:
                     found = intent
                     break
     return found
@@ -86,6 +92,7 @@ def load_intents():
     with open('./intents.json', mode='r', encoding='utf-8') as f:
         intents_raw = json.load(f)
         for intent in intents_raw["intents"]:
+            # Mapping der JSON-Objekte zu Intents
             obj = Intent()
             obj.Tag = intent["tag"]
             obj.Responses = intent["responses"]
